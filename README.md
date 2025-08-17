@@ -90,6 +90,18 @@ rules/
   - **Name**: `APK_SIGN_PROPERTIES`
   - **Value**: 填写 [apk.sign.properties.example](android/apk.sign.properties.example) 文件内容（请根据需要修改文件内容）
 
+- 可选配置（`Github Action`）：
+  - 添加自定义签名文件，可以覆盖安装 apk
+  - 首先通过命令生成一个.jks签名文件
+      ```bash
+    # 然后通过命令编码成一个 Base64 的文件
+    base64 -w 0 Termius_zh.jks > Termius_zh_base64.txt
+      ```
+  - 后前往仓库的 **Settings > Secrets and variables > Actions > Secrets** 页面，点击 <kbd>New repository secret</kbd> 定义私密变量。
+  
+  - **Name**: `SIGNING_KEY`
+  - **Value**: 填写 [Termius_zh_base64.txt](Base64生成的文件) 文件内容（请根据需要修改文件内容）
+
 ### 🤖 关于脚本
 - 安卓相关资源均存放在 [android](android) 目录下。
 - 所需工具：
