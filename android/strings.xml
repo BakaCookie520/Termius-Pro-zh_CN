@@ -351,7 +351,7 @@
   <string name="connection_flow_continue_button">继续</string>
   <string name="connection_flow_enter_passphrase">输入密钥短语</string>
   <string name="connection_flow_enter_password">输入密码</string>
-  <string name="connection_flow_host_fingerprint_request">无法建立主机 &lt;b&gt;%1$s&lt;/b&gt; 的真实性。\n\n%2$s 密钥指纹为 &lt;b&gt;%3$s&lt;/b&gt;。\n\n按“继续”将此主机添加到 Known Hosts 并继续连接</string>
+  <string name="connection_flow_host_fingerprint_request">无法建立主机 &lt;b&gt;%1$s&lt;/b&gt; 的真实性。&lt;br&gt;&lt;br&gt;%2$s 密钥指纹为 &lt;b&gt;%3$s&lt;/b&gt;。&lt;br&gt;&lt;br&gt;按“继续”将此主机添加到已知主机并继续连接</string>
   <string name="connection_flow_host_logs_edit_host">编辑主机</string>
   <string name="connection_flow_host_logs_start_over">重新开始</string>
   <string name="connection_flow_host_logs_status">连接无法建立：</string>
@@ -378,8 +378,8 @@
   <string name="connection_flow_select_identity">选择身份</string>
   <string name="connection_flow_select_key">选择要应用的密钥：</string>
   <string name="connection_flow_select_key_title">选择密钥</string>
-  <string name="connection_flow_select_protocol_request">未为主机 &lt;b&gt;%1$s&lt;/b&gt; 设置默认协议。\n\n&lt;b&gt;%2$s&lt;/b&gt;\n\n请选择你希望使用的协议来连接此主机。</string>
-  <string name="connection_flow_select_protocol_request_no_alias">未为此主机设置默认协议。\n\n&lt;b&gt;%1$s&lt;/b&gt;\n\n请选择你希望使用的协议来连接此主机。</string>
+  <string name="connection_flow_select_protocol_request">未为主机 &lt;b&gt;%1$s&lt;/b&gt; 设置默认协议。&lt;br&gt;&lt;br&gt;&lt;b&gt;%2$s&lt;/b&gt;&lt;br&gt;&lt;br&gt;请选择你希望使用的协议来连接此主机。</string>
+  <string name="connection_flow_select_protocol_request_no_alias">未为此主机设置默认协议。&lt;br&gt;&lt;br&gt;&lt;b&gt;%1$s&lt;/b&gt;&lt;br&gt;&lt;br&gt;请选择你希望使用的协议来连接此主机。</string>
   <string name="connection_flow_set_username">设置用户名</string>
   <string name="connection_flow_ssh_param_request">输入用于通过 SSH 连接的端口号</string>
   <string name="connection_flow_ssh_param_request_port_hint">端口</string>
@@ -607,7 +607,7 @@
   <string name="dns_feature_desc">轻松访问网络的全部潜力</string>
   <string name="dns_feature_desc_child">使用 DNS 服务发现轻松浏览网络中的服务。它与标准 DNS 编程接口、服务器和数据包格式兼容。</string>
   <string name="do_imported_many_hosts">%1$s DigitalOcean 主机已导入并添加到“主机”</string>
-  <string name="do_imported_one_host">1 DigitalOcean 主机已导入并添加到“主机”</string>
+  <string name="do_imported_one_host">1 个 DigitalOcean 主机已导入并添加到“主机”中</string>
   <string name="do_it_later">稍后处理</string>
   <string name="do_it_later_btn_label">稍后处理</string>
   <string name="do_it_later_btn_title">我稍后再做</string>
