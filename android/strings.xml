@@ -232,7 +232,7 @@
   <string name="change_and_connect_fragment">复制</string>
   <string name="change_email_btn">更改电子邮件</string>
   <string name="change_email_password_invalid">密码无效。</string>
-  <string name="change_master_password_title">更改加密密码</string>
+  <string name="change_master_password_title">更改密码</string>
   <string name="change_my_mind"><u>我改变了主意，想要专业版</u></string>
   <string name="change_page_title_menu_item">重命名</string>
   <string name="change_theme">更改主题</string>
@@ -243,7 +243,7 @@
   <string name="character_counter_overflowed_content_description">字符数超出限制 %1$d/%2$d</string>
   <string name="character_counter_pattern">%1$d/%2$d</string>
   <string name="charset_choose">选择字符集</string>
-  <string name="check_if_password_was_exposed_in_data_breaches">检查加密密码是否在数据泄露中暴露？</string>
+  <string name="check_if_password_was_exposed_in_data_breaches">检查密码是否在数据泄露中暴露？</string>
   <string name="checking_if_password_was_compromised">正在检查密码是否被泄露</string>
   <string name="chooseColorScheme">选择方案</string>
   <string name="chooseTypeface">选择字体</string>
@@ -739,8 +739,8 @@
   <string name="enjoy_all_benefits_of_termius">享受 Termius 的所有好处。</string>
   <string name="enter_authy_token_2fa_note">请输入令牌以完成设置。</string>
   <string name="enter_email">输入电子邮件</string>
-  <string name="enter_encryption_password_button">输入加密密码</string>
-  <string name="enter_encryption_password_for">输入加密密码以登录或使用其他电子邮件注册。</string>
+  <string name="enter_encryption_password_button">输入密码</string>
+  <string name="enter_encryption_password_for">输入密码以登录或使用其他电子邮件注册。</string>
   <string name="enter_password">输入密码：</string>
   <string name="enter_password_2fa_note">在继续之前，我们需要确认确实是你本人。请在下方输入你的 Termius 密码以确认身份。</string>
   <string name="enter_password_2fa_title">输入密码</string>
@@ -748,7 +748,7 @@
   <string name="enter_phone_number_2fa_title">电话号码</string>
   <string name="enter_username">输入用户名：</string>
   <string name="enter_your_email_address">输入你的电子邮件地址</string>
-  <string name="enter_your_password_to_login_or_change_email">输入加密密码以登录或使用其他电子邮件注册。</string>
+  <string name="enter_your_password_to_login_or_change_email">输入密码以登录或使用其他电子邮件注册。</string>
   <string name="enterprise_contact_sales_url">https://support.termius.com/hc/en-us/requests/new?ticket_form_id=39460990308121</string>
   <string name="enterprise_continue_on_desktop_screen_description">在 Termius 桌面应用程序中完成你的账户设置。</string>
   <string name="enterprise_continue_on_desktop_screen_title">继续在桌面操作</string>
@@ -1097,9 +1097,9 @@
   <string name="hotkeys_toggle_side_menu">切换侧边菜单</string>
   <string name="hotkeys_w_key">W</string>
   <string name="hours_before_expiry">%d 小时后到期</string>
-  <string name="how_data_encrypted_description">Termius 使用混合加密来保护你的数据。这涉及生成一个随机加密密钥和一对随机密钥对来加密加密密钥。然后使用你的加密密码加密私钥。
+  <string name="how_data_encrypted_description">Termius 使用混合加密来保护你的数据。这涉及生成一个随机加密密钥和一对随机密钥对来加密加密密钥。然后使用你的密码加密私钥。
 
-Termius 不存储加密密码。如果你忘记了密码，你将丢失数据。这就是为什么务必在某个安全的地方保存你的密码。</string>
+Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就是为什么务必在某个安全的地方保存你的密码。</string>
   <string name="how_data_encrypted_title">数据是如何加密的？</string>
   <string name="how_do_you_plan_to_use_termius">你计划如何使用 Termius？</string>
   <string name="how_we_check_passwords">https://termi.us/hipb</string>
@@ -1373,7 +1373,7 @@ Termius 不存储加密密码。如果你忘记了密码，你将丢失数据。
   <string name="manage_vaults">管理保管库</string>
   <string name="manually_enter">手动输入</string>
   <string name="mark_shared_item">%1$s [共享]</string>
-  <string name="master_password_hint">加密密码</string>
+  <string name="master_password_hint">密码</string>
   <string name="material_clock_display_divider">:</string>
   <string name="material_clock_toggle_content_description">选择上午或下午</string>
   <string name="material_hour_24h_suffix">%1$s 小时</string>
@@ -1650,7 +1650,7 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="new_key_selector_top_bar_select_title">选择</string>
   <string name="new_key_title">新建密钥</string>
   <string name="new_local_menu_item">新建本地</string>
-  <string name="new_password">新加密密码</string>
+  <string name="new_password">新密码</string>
   <string name="new_snippet_package_menu_item">新建包</string>
   <string name="new_ssh_certificate">新建证书...</string>
   <string name="new_ssh_certificate_title">新建证书</string>
@@ -1710,7 +1710,7 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="notifications_you_are_up_to_date">已是最新版本！&#127881;</string>
   <string name="octal_view_permission">八进制</string>
   <string name="ok">确定</string>
-  <string name="old_password">旧加密密码</string>
+  <string name="old_password">旧密码</string>
   <string name="onboarding_automation_title">自动化</string>
   <string name="onboarding_dark_agent_forwarding_description">通过中间服务器建立连接，无需手动复制密钥或凭证</string>
   <string name="onboarding_dark_agent_forwarding_title">代理转发是专业版功能</string>
@@ -1806,7 +1806,7 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="pf_rule_notification_title">端口转发规则：</string>
   <string name="pf_rules_fragment">端口转发规则</string>
   <string name="phone_number_hint">手机号</string>
-  <string name="please_enter_your_master_password">请输入加密密码</string>
+  <string name="please_enter_your_master_password">请输入密码</string>
   <string name="please_enter_your_otp_code">请输入双重认证应用中的验证码</string>
   <string name="please_enter_your_pattern">请输入图案</string>
   <string name="please_enter_your_pin_code">请输入 PIN 码</string>
@@ -1991,7 +1991,7 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="reset_encryption_password_description">密码重置将永久删除你所有保管库及相关信息</string>
   <string name="reset_encryption_password_description_highlight">永久删除</string>
   <string name="reset_encryption_password_get_instructions_button">获取说明</string>
-  <string name="reset_encryption_password_title">重置加密密码</string>
+  <string name="reset_encryption_password_title">重置密码</string>
   <string name="restoreSubs">恢复</string>
   <string name="restore_previous_selection_count_host">恢复之前的选择 (%1$d 主机)</string>
   <string name="restore_selection">恢复选择</string>
@@ -2137,7 +2137,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="session_logs_title">会话日志</string>
   <string name="session_logs_view_in_desktop_title">在桌面应用
     查看日志</string>
-  <string name="set_an_encryption_password_for_your_vault">为保管库设置加密密码</string>
+  <string name="set_an_encryption_password_for_your_vault">为保管库设置密码</string>
   <string name="set_pin_code">设置 PIN 码</string>
   <string name="set_up_an_account">设置账户</string>
   <string name="set_up_your_team_vault">设置团队保管库</string>
@@ -2638,7 +2638,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="termius_basic_features_header">免费功能</string>
   <string name="termius_basic_features_header_expired">你可继续使用以下功能</string>
   <string name="termius_blog_on_medium">Termius 博客</string>
-  <string name="termius_cannot_reset_password_hint">重置加密密码将清除所有保管库。请妥善保存密码。</string>
+  <string name="termius_cannot_reset_password_hint">重置密码将清除所有保管库。请妥善保存密码。</string>
   <string name="termius_color_scheme_text">&gt;_</string>
   <string name="termius_contact_support_page_url">https://support.termius.com/hc/en-us</string>
   <string name="termius_download_link">https://termius.com/download</string>
@@ -2763,7 +2763,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="two_factor_auth_enabling_expired_token_dialog_description">请重新启动双重认证启用流程</string>
   <string name="two_factor_auth_expired_token_dialog_restart_label">重新开始</string>
   <string name="two_factor_auth_expired_token_dialog_title">时间窗口已结束</string>
-  <string name="two_factor_auth_will_be_required_when_logging_in_via_email">通过邮箱和加密密码登录时
+  <string name="two_factor_auth_will_be_required_when_logging_in_via_email">通过邮箱和密码登录时
     将需要双重认证</string>
   <string name="two_factor_dialog_install_authy">安装 Authy</string>
   <string name="two_factor_dialog_password_empty_password_error">密码不能为空</string>
@@ -2784,8 +2784,8 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="unlock_button_text">解锁</string>
   <string name="unlock_title">解锁专业版功能</string>
   <string name="unlock_unlimited_access">解锁无限访问权限</string>
-  <string name="unlock_with_master_password">使用加密密码解锁</string>
-  <string name="unlock_your_termius_vault">输入加密密码</string>
+  <string name="unlock_with_master_password">使用密码解锁</string>
+  <string name="unlock_your_termius_vault">输入密码</string>
   <string name="unlock_your_vault">解锁保管库</string>
   <string name="unshare_group_option_item">取消共享</string>
   <string name="unshare_this_group_dialog_message">此操作将禁止团队访问此分组及其所有主机</string>
@@ -2848,7 +2848,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="welcome_account_not_found">尚未创建账户</string>
   <string name="welcome_account_not_found_message">未找到关联账户</string>
   <string name="welcome_back_to_termius">欢迎回到 Termius</string>
-  <string name="welcome_cannot_recover_data_if_lose_your_password">若丢失加密密码，Termius 无法恢复保管库数据</string>
+  <string name="welcome_cannot_recover_data_if_lose_your_password">若丢失密码，Termius 无法恢复保管库数据</string>
   <string name="welcome_check_your_email">查收邮件</string>
   <string name="welcome_check_your_email_code_hint">验证码</string>
   <string name="welcome_check_your_email_message">请输入发送至邮箱的 8 位验证码
@@ -2859,7 +2859,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="welcome_continue_no_sync_and_ai">无同步和 AI 继续使用</string>
   <string name="welcome_enter_2fa_code">输入验证码</string>
   <string name="welcome_enter_verification_code_message">请输入双重认证应用的验证码</string>
-  <string name="welcome_i_saved_my_password">我已保存加密密码</string>
+  <string name="welcome_i_saved_my_password">我已保存密码</string>
   <string name="welcome_init_personal_vault">初始化个人保管库</string>
   <string name="welcome_init_vault_login_otp_error">登录一次性密码错误</string>
   <string name="welcome_init_vault_login_team_sso_required">需要团队单点登录</string>
@@ -2884,17 +2884,17 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="welcome_reset_encryption_password_permanently_delete">永久删除</string>
   <string name="welcome_reset_encryption_password_sent_description">密码重置说明邮件已发送至</string>
   <string name="welcome_reset_encryption_password_sent_title">查收邮件重置密码</string>
-  <string name="welcome_reset_encryption_password_title">重置加密密码</string>
+  <string name="welcome_reset_encryption_password_title">重置密码</string>
   <string name="welcome_save_password_in_safe_place">妥善保存（建议使用密码管理器）</string>
-  <string name="welcome_sign_in_encryption_password_title">输入加密密码</string>
+  <string name="welcome_sign_in_encryption_password_title">输入密码</string>
   <string name="welcome_sign_in_verify_email_button_waiting">等待验证中</string>
   <string name="welcome_sign_in_verify_email_contact_us">联系我们</string>
   <string name="welcome_sign_in_verify_email_did_not_get_email">未收到邮件？联系我们</string>
   <string name="welcome_sign_in_verify_email_message">为增强安全性，验证邮件已发送至</string>
   <string name="welcome_sign_in_verify_email_title">查收邮件验证登录</string>
-  <string name="welcome_sign_up_encryption_password_label">加密密码</string>
+  <string name="welcome_sign_up_encryption_password_label">密码</string>
   <string name="welcome_sign_up_encryption_password_subtitle">保管库支持跨设备备份与安全同步</string>
-  <string name="welcome_sign_up_encryption_password_title">设置保管库加密密码</string>
+  <string name="welcome_sign_up_encryption_password_title">设置保管库密码</string>
   <string name="welcome_slide_effortless_connections_description">集中管理所有连接信息</string>
   <string name="welcome_slide_effortless_connections_title">加密保管库</string>
   <string name="welcome_slide_features_hosts">主机</string>
@@ -2935,14 +2935,14 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="welcome_try_termius_what_is_included">包含功能</string>
   <string name="welcome_unlock_ai_powered_tools_sync_and_collaboration">解锁 AI 增强工具、同步与协作功能</string>
   <string name="welcome_you_already_have_an_account">你已有账户</string>
-  <string name="welcome_your_vaults_are_encrypted_with_password">你的保管库使用加密密码保护</string>
+  <string name="welcome_your_vaults_are_encrypted_with_password">你的保管库使用密码保护</string>
   <string name="what_devices_do_you_manage">你管理哪些设备？</string>
   <string name="what_new">新增功能</string>
   <string name="what_tools_do_you_need">你需要哪些工具？</string>
   <string name="when_paid_annually">年付价格</string>
   <string name="where_data_stored_description">你的数据存储在 AWS 托管的 Termius 加密云保管库中。设备本地会缓存数据副本，支持离线使用</string>
   <string name="where_data_stored_title">我的数据存储在哪里？</string>
-  <string name="where_private_key_stored_description">私钥在客户端使用加密密码加密后存储于 Termius 同步服务器。即使 Termius 员工也无法在不知道加密密码的情况下访问私钥</string>
+  <string name="where_private_key_stored_description">私钥在客户端使用密码加密后存储于 Termius 同步服务器。即使 Termius 员工也无法在不知道密码的情况下访问私钥</string>
   <string name="where_private_key_stored_title">私钥存储在哪里？</string>
   <string name="widget_feature">主屏幕小组件</string>
   <string name="widget_feature_desc">多连接管理的最快方式</string>
