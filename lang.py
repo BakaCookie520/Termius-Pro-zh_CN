@@ -175,6 +175,7 @@ class TermiusModifier:
         self.replace_rules()
         self.write_files()
         self.pack_to_asar()
+        apply_macos_fix()
         elapsed = time.monotonic() - start_time
         logging.info(f"Replacement done in {elapsed:.2f} seconds.")
 
@@ -288,6 +289,17 @@ def select_directory(title):
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         sys.exit(1)
+
+
+def is_macos():
+    return platform.system() == 'Darwin'
+
+
+def apply_macos_fix():
+    if is_macos():
+        script_path = "./macos/osxfix.sh"
+        run_command(["chmod", "+x", script_path])
+        run_command(script_path)
 
 
 def get_termius_path():
