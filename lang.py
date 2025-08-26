@@ -57,12 +57,12 @@ class TermiusModifier:
 
     def decompress_asar(self):
         """解压 app.asar 文件"""
-        cmd = f"asar extract {self._original_path} {self._app_dir}"
+        cmd = f'asar extract {self._original_path} {self._app_dir}'
         run_command(cmd, shell=True)
 
     def pack_to_asar(self):
         """打包 app.asar 文件"""
-        cmd = f"asar pack {self._app_dir} {self._original_path} --unpack-dir {{node_modules/@termius,out}}"
+        cmd = f'asar pack {self._app_dir} {self._original_path} --unpack-dir "{{node_modules/@termius,out}}"'
         run_command(cmd, shell=True)
 
     def restore_backup(self):
@@ -208,7 +208,10 @@ class TermiusModifier:
 
 def run_command(cmd, shell=False):
     """执行系统命令"""
-    logging.info(f"Running command: {cmd}")
+    if isinstance(cmd, list):
+        logging.info(f"Running command: {' '.join(cmd)}")
+    else:
+        logging.info(f"Running command: {cmd}")
     try:
         subprocess.run(cmd, shell=shell, check=True)
     except subprocess.CalledProcessError as e:
