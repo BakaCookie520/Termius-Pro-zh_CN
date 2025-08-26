@@ -20,7 +20,7 @@
 - Node.js (用于安装asar)
 
 ```bash
-npm install -g asar
+npm install -g @electron/asar
 ```
 
 ### 🧑‍💻 基础使用
