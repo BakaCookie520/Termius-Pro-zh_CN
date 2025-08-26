@@ -300,9 +300,11 @@ def is_macos():
 
 def apply_macos_fix():
     if is_macos():
+        logging.info("Applying macOS fix...")
         script_path = "./macos/osxfix.sh"
         run_command(["chmod", "+x", script_path])
         run_command(script_path)
+        logging.info("MacOS fix applied.")
 
 
 def get_termius_path():
