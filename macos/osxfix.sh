@@ -42,8 +42,15 @@ resign_app() {
 	local app_path=$1
 	local tempfile=$(mktemp)
 	codesign --display --entitlements - --xml "$app_path" > $tempfile
-	plutil -remove comA_DOT_WAS_HEREappleA_DOT_WAS_HEREdeveloperA_DOT_WAS_HEREteam-identifier $tempfile
-	plutil -remove keychain-access-groups $tempfile
+
+	if plutil -extract comA_DOT_WAS_HEREappleA_DOT_WAS_HEREdeveloperA_DOT_WAS_HEREteam-identifier raw $tempfile >/dev/null 2>&1; then
+		plutil -remove comA_DOT_WAS_HEREappleA_DOT_WAS_HEREdeveloperA_DOT_WAS_HEREteam-identifier $tempfile
+	fi
+
+	if plutil -extract keychain-access-groups raw $tempfile >/dev/null 2>&1; then
+		plutil -remove keychain-access-groups $tempfile
+	fi
+
 	codesign --force --sign - --deep --entitlements $tempfile $app_path
 	rm $tempfile
 }
