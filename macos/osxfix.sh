@@ -14,7 +14,7 @@ if [[ ! -e $ASAR_PATH ]] {
 calc_hash() {
 	local asar_path="$1"
 	integer head_len=$(od -An -j 12 -N4 -D $asar_path)
-	dd bs=1 count=$head_len skip=16 if=$asar_path 2>/dev/null | sha256
+	dd bs=1 count=$head_len skip=16 if=$asar_path 2>/dev/null | shasum -a256 -b | cut -d ' ' -f 1
 }
 
 update_hash() {
