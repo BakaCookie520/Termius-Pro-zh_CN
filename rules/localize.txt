@@ -595,7 +595,7 @@ children:"Groups"|children:"分组"
 "Username, passwords and keys will be shared in the"|"用户名、密码和密钥将在"
 "Members use their own credentials"|"成员使用自己的凭证"
 "Credentials are not shared and stored in"|"凭证不共享并存储在"
-children:`${N} item${N!==1?"s":""} selected`|children:`已选择 ${N} 个项目`
+/children:`\${(?P<t>[\w$]+?)} item\${(?P=t)!==1\?"s":""} selected`/|children:`已选择 ${\g<t>} 个项目`
 label:"Filter"|label:"筛选"
 "You don't have shell history yet"|"你还没有 Shell 历史记录"
 "Connect to a host via SSH to see your shell history here."|"通过 SSH 连接到主机，在此处查看你的 Shell 历史记录。"
@@ -735,7 +735,7 @@ text:"Do you want to cancel key export and discard all changes?"|text:"是否要
 "Add a Host"|"添加主机"
 "Are you sure you want to connect?"|"你确定要连接吗?"
 "The authenticity of ",n," can not be established."|"无法确定 ",n," 的真实性."
-" fingerprint is:"|" 指纹是:"
+" fingerprint is SHA256:"|" 指纹是 SHA256:"
 "Do you want to add it to the list of known hosts?"|"是否要将其添加到已知主机列表?"
 "Add & continue":"Add and continue"|"添加 & 继续":"添加并继续"
 "The fingerprint for ",n," has changed"|n," 的指纹已更改"
@@ -887,8 +887,8 @@ placeholder:"Value"|placeholder:"值"
 singular:"Entity",plural:"Entities"|singular:"实体",plural:"实体"
 singular:"identity",plural:"identities"|singular:"身份",plural:"身份"
 /`\${(?P<t>\w+?)\.snippets_count} snippet`:`\${(?P=t)\.snippets_count} snippets`/|`${\g<t>.snippets_count} 个代码片段`:`${\g<t>.snippets_count} 个代码片段`
-`${t.children_hosts.length} host${t.children_hosts.length!==1?"s":""}`|`${t.children_hosts.length} 个主机`
-`${t.snippets_count} snippet${t.snippets_count!==1?"s":""}`|`${t.snippets_count} 个代码片段`
+/`\${(?P<t>\w+?)\.children_hosts\.length} host\${(?P=t)\.children_hosts\.length!==1\?"s":""}`/|`${\g<t>.children_hosts.length} 个主机`
+/`\${(?P<t>\w+?)\.snippets_count} snippet\${(?P=t)\.snippets_count!==1\?"s":""}`/|`${\g<t>.snippets_count} 个代码片段`
 /`\${([\w$]+)\.snippets_count([^0]+)0} \${[\w$]+\?"snippets":"snippet"}`/|`${\g<1>.snippets_count\g<2>0} 个代码片段`
 
 /`From \${([\w$]+)\.host_label}:\${([\w$]+)\.local_port}`/|`从 ${\g<1>.host_label}:${\g<2>.local_port}`
@@ -1117,12 +1117,6 @@ placeholder:"New Workspace"|placeholder:"新建工作区"
 "Workspace Template"|"工作区模板"
 "Workspace templates"|"工作区模板"
 "New Workspace Template"|"新建工作区模板"
-"The workspace was changed"|"工作区已更改"
-"Save changes to the workspace."|"保存对工作区的更改。"
-"Save to template"|"保存到模板"
-"Save a workspace template?"|"保存工作区模板吗?"
-"Create a template of this workspace to easily reuse it."|"创建此工作区的模板以方便重复使用。"
-"Save a template"|"保存模板"
 "Workspace Tab"|"工作区选项卡"
 "New Tab Screen"|"新建选项卡屏幕"
 "Some Pro features have been disabled in this session"|"此会话中已禁用某些专业版功能"
@@ -1323,3 +1317,7 @@ children:"Confirm access"|children:"确认访问"
 "New Termius version is available"|"新的 Termius 版本已推出"
 "Version {version} is ready to install."|"版本 {version} 已准备好安装。"
 "Processing your request..."|"正在处理你的请求..."
+text:"Connecting"|text:"正在连接"
+text:"Reconnect"|text:"重新连接"
+text:"Connection failed"|text:"连接失败"
+"Save template":"Update template"|"保存模板":"更新模板"
