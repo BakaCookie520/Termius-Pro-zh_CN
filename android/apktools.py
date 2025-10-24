@@ -4,7 +4,6 @@ import platform
 import re
 import shutil
 import stat
-
 import requests
 import subprocess
 import sys
