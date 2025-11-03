@@ -696,12 +696,6 @@ label:"Certificate"|label:"证书"
 "Remote Port Forwarding"|"远程端口转发"
 "Dynamic Port Forwarding"|"动态端口转发"
 "Host Details"|"主机详细信息"
-children:"Copy & Paste"|children:"复制 & 粘贴"
-"Choose how you’d like Copy and Paste to work:"|"选择你希望复制和粘贴的工作方式："
-"Use keyboard shortcuts"|"使用键盘快捷键"
-"Enable select + click"|"启用 选择 + 单击"
-/children:\["Use"," ",([^\]]+),children:\[([^,]+),"\+C"\]}\)," to Copy",([^\]]+),"and"," ",([^\]]+),children:\[([^,]+),"\+V"\]}\)," to Paste"\]/|children:["使用"," ",\g<1>,children:[\g<2>,"+C"]})," 复制",\g<3>,"和"," ",\g<4>,children:[\g<5>,"+V"]})," 粘贴"]
-/\[([\w$]+)\("span",{className:([^}]+),children:"Select"}\)," text to Copy,",([^\]]+),"use ",([^}]+),children:"Right Click"}\)," to Paste.",([^\]]+),children:"Keyboard shortcuts"}\)," ","will still work."\]/|[\g<1>("span",{className:\g<2>,children:"选择"})," 要复制的文本,",\g<3>,"使用",\g<4>,children:" 右键单击"})," 粘贴.",\g<5>,children:"键盘快捷键"})," ","仍然有效."]
 "No file type associations yet"|"还没有文件类型关联"
 "Apps you choose using the “Open with…” option to open files via SFTP will appear here."|"你选择使用“用…打开”选项选择的应用程序将通过 SFTP 打开文件。"
 "Start by connecting to a saved host to manage your files with SFTP."|"首先连接到保存的主机以使用 SFTP 管理文件。"
