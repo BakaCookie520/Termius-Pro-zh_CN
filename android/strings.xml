@@ -63,6 +63,7 @@
   <string name="active_devices_holder_sign_out_button_title">退出</string>
   <string name="active_devices_holder_this_device_description">此设备</string>
   <string name="active_devices_holder_unknown_device_title">未知设备</string>
+  <string name="add_a_comment">添加评论</string>
   <string name="add_an_ssh_certificate">添加SSH证书</string>
   <string name="add_an_ssh_key">添加SSH密钥</string>
   <string name="add_another_team_member_email_btn_label">+ 添加其他邮箱</string>
@@ -429,6 +430,7 @@
   <string name="control_how_logs_are_stored_in_your_vaults">控制日志如何存储在你的保管库中：</string>
   <string name="copied">已复制</string>
   <string name="copy">复制</string>
+  <string name="copy_action">复制</string>
   <string name="copy_all">全部复制</string>
   <string name="copy_biometric_public_key_buffer">将公钥复制到缓冲区</string>
   <string name="copy_download_link_label">复制下载链接</string>
@@ -646,6 +648,7 @@
   <string name="ed25519_item_title">ED25519</string>
   <string name="ed_rounds_title">轮次</string>
   <string name="edit">编辑</string>
+  <string name="edit_action">编辑</string>
   <string name="edit_biometric_key_generated_on">生成时间: %s</string>
   <string name="edit_biometric_keys_note">Android 密钥库中的生物识别密钥无法提取或复制，只能通过你的生物特征访问。</string>
   <string name="edit_biometric_ssh_key_screen_title">编辑生物识别密钥</string>
@@ -1177,6 +1180,7 @@ Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就
   <string name="invite">邀请</string>
   <string name="invite_by_email_placeholder">通过电子邮件邀请</string>
   <string name="invite_colleagues">邀请同事</string>
+  <string name="invite_members">邀请成员</string>
   <string name="invite_sent">邀请已发送</string>
   <string name="invite_team_members">邀请团队成员</string>
   <string name="invite_your_colleagues">邀请你的同事</string>
@@ -1263,7 +1267,6 @@ Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就
   <string name="local_storage_picker_default_directory_label">默认目录：</string>
   <string name="local_storage_picker_recent_directories_label">最近目录：</string>
   <string name="local_storage_picker_termius_local">Termius Local:/</string>
-  <string name="location_unavailable">位置不可用</string>
   <string name="lock_feature">图案锁</string>
   <string name="lock_feature_desc">比PIN码保护更安全</string>
   <string name="lock_feature_desc_child">图案锁是旧式PIN授权方法的一种更安全的替代方案。</string>
@@ -1781,6 +1784,7 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="one_hour_before_expiry">1 小时后过期</string>
   <string name="one_minute_before_expiry">1 分钟后过期</string>
   <string name="oops_title">糟糕！</string>
+  <string name="open_action">打开</string>
   <string name="open_ai_prompts_per_month_for_free">每月免费 1000 次提示</string>
   <string name="open_file_failed">文件打开失败！</string>
   <string name="open_source_libraries_title">开源库</string>
@@ -2084,6 +2088,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
   <string name="save_as_host">另存为主机</string>
   <string name="save_iaas_instances_empty_list">请选择要保存的实例</string>
   <string name="save_key">保存密钥</string>
+  <string name="save_logs">保存日志</string>
   <string name="save_menu_item">保存</string>
   <string name="save_passphrase_checkbox">保存密码短语</string>
   <string name="save_password">保存密码</string>
@@ -2164,17 +2169,18 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="serverfault_search_link">https://serverfault.com/search?q=%1$s</string>
   <string name="service_unavailable">服务不可用</string>
   <string name="session_expired_log_back_in">请重新登录以继续</string>
-  <string name="session_log_connection_status_canceled">已取消</string>
-  <string name="session_log_connection_status_connected">已连接</string>
-  <string name="session_log_connection_status_failed">失败</string>
-  <string name="session_log_connection_status_unknown">未知</string>
+  <string name="session_log_create_comment">保存日志</string>
+  <string name="session_log_edit_comment">评论</string>
+  <string name="session_log_edit_comment_placeholder">添加评论</string>
   <string name="session_logs_contact_us_url">https://termius.typeform.com/to/E9XVyoIb#email=%s</string>
   <string name="session_logs_empty_screen_common_description">连接日志是终端会话期间活动的记录。</string>
-  <string name="session_logs_table_column_action">操作</string>
-  <string name="session_logs_table_column_device">设备</string>
+  <string name="session_logs_enable_retention_promotion_description">通过符合合规性要求的自定义日志保留策略，随时做好审计准备。</string>
+  <string name="session_logs_enable_sharing_promotion_description">通过访问团队保管库中的共享日志，与你的团队成员更快地排除故障。</string>
+  <string name="session_logs_enable_sync_promotion_description">使用云保管库使你的日志在移动设备和桌面上保持同步。</string>
+  <string name="session_logs_setup_vault_promotion_description">使用云保管库备份日志，并在移动设备和桌面上访问它们。</string>
+  <string name="session_logs_table_column_date">日期</string>
   <string name="session_logs_table_column_host">主机</string>
-  <string name="session_logs_table_column_location">位置</string>
-  <string name="session_logs_table_column_time">时间</string>
+  <string name="session_logs_table_column_saved">已保存</string>
   <string name="session_logs_table_column_user">用户</string>
   <string name="session_logs_title">会话日志</string>
   <string name="session_logs_view_in_desktop_title">在桌面应用
@@ -2182,6 +2188,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="set_an_encryption_password_for_your_vault">为保管库设置密码</string>
   <string name="set_pin_code">设置 PIN 码</string>
   <string name="set_up_an_account">设置账户</string>
+  <string name="set_up_vault">设置保管库</string>
   <string name="set_up_your_team_vault">设置团队保管库</string>
   <string name="settings_about_category_title">关于</string>
   <string name="settings_account_title">账户</string>
@@ -2461,6 +2468,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="sftp_transfer_notification_completed_segment">完成所有传输</string>
   <string name="sftp_transfer_notification_conflict_segment">%1$d 冲突</string>
   <string name="sftp_transfer_notification_failed_segment">%1$d 失败</string>
+  <string name="sftp_transfer_notification_foreground_text">正在准备 SFTP 传输…</string>
   <string name="sftp_transfer_notification_pending_segment">%1$d 等待</string>
   <string name="sftp_transfer_notification_progress_count">%1$d/%2$d 完成</string>
   <string name="sftp_transfer_notification_service_terminated">传输已停止: 后台服务已终止。</string>
@@ -2619,7 +2627,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="storage_class_layout_reduced">低频访问型</string>
   <string name="storage_class_layout_standard">标准型</string>
   <string name="storage_class_layout_standard_ia">标准不频繁访问型</string>
-  <string name="stored_only_latest_session_log_promo_description">如需存储更多日志或定制保留策略，请联系我们</string>
   <string name="stripe_checkout_url_domain">checkout.stripe.com</string>
   <string name="student_subscription_has_expired">学生订阅已过期</string>
   <string name="submit_feedback">提交反馈并返回首页</string>
@@ -2647,6 +2654,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="sync_btn">立即同步</string>
   <string name="sync_feature">安全跨设备同步</string>
   <string name="sync_in_prog">同步中…</string>
+  <string name="sync_now">立即同步</string>
   <string name="sync_ssh_keys_and_passwords">同步密钥与身份</string>
   <string name="sync_to_desktop_nav_header">同步至桌面端</string>
   <string name="sync_with_clouds_description">通过 Termius 桌面客户端同步你的 %s 基础设施，支持 macOS/Windows/Linux</string>
@@ -2893,7 +2901,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="undo">撤销</string>
   <string name="unexpected_error">意外错误</string>
   <string name="unknown_certificate_format">未知格式</string>
-  <string name="unknown_device">未知设备</string>
   <string name="unknown_price_stub">...</string>
   <string name="unknown_request_error">请求处理出错，请重试</string>
   <string name="unknown_section_header">未知</string>
@@ -2917,6 +2924,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="update_subscription_screen">更新订阅中</string>
   <string name="upgrade_button_label">升级</string>
   <string name="upgrade_now">立即升级</string>
+  <string name="upgrade_to_pro_to_save_and_view_your_terminal_sessions_anytime">升级到专业版以随时保存和查看你的终端会话。</string>
   <string name="use_agent_forwarding">代理转发</string>
   <string name="use_ai_in_terminal">在终端使用 AI</string>
   <string name="use_ai_in_terminal_highlight_helper">终端 AI</string>
@@ -3093,7 +3101,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="your_device_is_offline">设备处于离线状态</string>
   <string name="your_enterprise_plan_has_expired">组织企业版方案已暂停</string>
   <string name="your_free_trial_has_expired_title">免费试用期已结束</string>
-  <string name="your_plan_includes_the_latest_session_log_for_each_host">你的方案包含每台主机的最新会话日志</string>
   <string name="your_pro_plan_has_been_activated">专业版方案已激活！</string>
   <string name="your_subscription_has_expired">订阅已过期</string>
   <string name="your_subscription_has_expired_title">订阅已过期</string>
