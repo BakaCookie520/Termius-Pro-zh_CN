@@ -2977,7 +2977,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="welcome_check_your_email_message">请输入发送至邮箱的 8 位验证码
 </string>
   <string name="welcome_check_your_email_resend">重新发送验证码</string>
-  <string name="welcome_check_your_email_resend_in">%s 后重新发送</string>
+  <string name="welcome_check_your_email_resend_in">重新发送：</string>
   <string name="welcome_check_your_email_sending">正在发送验证码</string>
   <string name="welcome_continue_no_sync_and_ai">无同步和 AI 继续使用</string>
   <string name="welcome_enter_2fa_code">输入验证码</string>
