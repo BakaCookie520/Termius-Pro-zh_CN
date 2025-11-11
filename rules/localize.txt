@@ -1202,7 +1202,7 @@ name:"Team"|name:"团队"
 "Link copied"|"链接已复制"
 "Welcome back to Termius"|"欢迎回到 Termius"
 "Don’t have an account yet?"|"还没有帐户吗?"
-"Create free account"|"创建免费账户"
+"Create free account"|"创建免费帐户"
 /children:\[([^\[\]}\)]+?),children:`Save up to \${(\w+?)}%`}\)," ","when you opt for the annual subscription\. Get peace of mind",([^\[\]]+?)"of knowing that your subscription is taken care of for an entire year\."\]/|children:["选择年度订阅可"," ",\g<1>,children:`节省高达 ${\g<2>}%`})," ","的费用。订阅全年服务，让你省心无忧。"]
 children:"Monthly"|children:"月度"
 children:"Annual"|children:"年度"
@@ -1226,28 +1226,15 @@ children:"Annual"|children:"年度"
 "Disable Logs"|"禁用日志"
 "Couldn't download session log file"|"无法下载会话日志文件"
 /"Disabling logs will ",([\w$]+?)\("strong",{children:"delete the logs "}\),"from this vault:"/|"禁用日志将从此保管库中",\g<1>("strong",{children:"删除日志"}),"："
-"Your plan includes the latest session log for each host"|"你的计划包括每个主机的最新会话日志"
-"Contact us if you need to store more logs or custom retention policies."|"如果你需要存储更多日志或自定义保留策略，请联系我们。"
 /`You have \${([\w$]+?)\.size}mb of logs stored locally`/|`本地存储了${\g<1>.size}mb的日志`
+"Change log retention policies or create an account to store logs in a cloud vault."|"更改日志保留策略或创建帐户以将日志存储在云保险库中。"
 "Manage log storage in settings."|"在设置中管理日志存储。"
 title:"Logs"|title:"日志"
 /`Couldn't \${(\w+?)\?"enable":"disable"} logs in \${\((\w+?)=(\w+?)\.get\((\w+?)\)\)==null\?void 0:(\w+?)\.name}`/|`无法在${(\g<2>=\g<3>.get(\g<4>))==null?void 0:\g<5>.name}中${\g<1>?"启用":"禁用"}日志`
 "No account"|"无帐户"
-"Location unavailable"|"位置不可用"
-"failed":"connected"|"失败":"已连接"
 "Loading ideas portal..."|"正在加载创意门户..."
-User:{normal|用户:{normal
-Action:{normal|动作:{normal
-Host:{normal|主机:{normal
-Time:{normal|时间:{normal
-Device:{normal|设备:{normal
-Location:{normal|位置:{normal
-User[|用户[
-Action[|动作[
-Host[|主机[
-Time[|时间[
-Device[|设备[
-Location[|位置[
+/className:(\w+?)\.headerTitle,children:(?P<l>\w+?)}\),(?P=l)==="date"/|className:\g<1>.headerTitle,children:\g<l>==="user"?"用户":\g<l>==="host"?"主机":\g<l>==="date"?"日期":\g<l>==="saved"?"已保存":\g<l>}),\g<l>==="date"
+"Add a comment"|"添加评论"
 "Press ↓ to generate with AI"|"按下 ↓ 使用 AI 生成"
 "Convert your prompt to a shell command using AI"|"使用 AI 将提示符转换为 Shell 命令"
 "Activating autocomplete..."|"启用自动补全..."
@@ -1303,6 +1290,7 @@ children:"You"|children:"你"
 "Turn off if you're experiencing issues with legacy devices"|"如果使用旧设备时遇到问题，请关闭"
 "Checking for notifications..."|"正在检查通知..."
 "No notifications"|"无通知"
+"Restarting..."|"重启中..."
 "Restart and update"|"重启并更新"
 "Trial Expiring Soon"|"试用即将到期"
 children:"Manage plans"|children:"管理计划"
@@ -1314,3 +1302,8 @@ text:"Connecting"|text:"正在连接"
 text:"Reconnect"|text:"重新连接"
 text:"Connection failed"|text:"连接失败"
 "Save template":"Update template"|"保存模板":"更新模板"
+"new member"|"新成员"
+"No matching members found"|"未找到匹配的成员"
+/`\${(?P<a>\w+?)} \${\w+?\("day",(?P=a)\)} left on your free Trial`/|`免费试用还剩 ${\g<a>} 天`
+"Review your options to keep your workflow uninterrupted."|"检查你的选项以保持你的工作流程不间断。"
+button_name:"Manage plans"|button_name:"管理计划"
