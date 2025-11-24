@@ -26,9 +26,8 @@ title:"Manage Team"|title:"管理团队"
 title:"Hosts"|title:"远程主机"
 title:"Quick connect"|title:"快速连接"
 
-"No access to team vaults"|"无法进入团队保管库"
 "No vaults selected"|"未选择保管库"
-Contact your team admin to request access.`|请与你的团队管理员联系以请求访问权限。`
+"Contact your team admin to request access."|"请与你的团队管理员联系以请求访问权限。"
 "Please select at least one vault in the vault picker."|"请在保管库选择器中至少选择一个保管库。"
 "Re-enter your "|"重新输入你的"
 "To enable this feature, please enter your Termius"|"要启用这个特性, 请输入你的 Termius"
@@ -120,6 +119,7 @@ title:"Use Option as Meta key"|title:"将 Option 键映射为 Meta 键"
 "Undo"|"撤销"
 "Done"|"完成"
 "Active"|"活动"
+"Updated":"Enabled"|"已更新":"已启用"
 "Enabled"|"已启用"
 "Disabled"|"已禁用"
 "Connect to host"|"连接到主机"
@@ -201,7 +201,7 @@ label:"Address"|label:"地址"
 
 label:"Name"|label:"名称"
 label:"Public Key"|label:"公钥"
-{role:"selectAll"}|{label:"全选",role:"selectAll"}
+label:"Select All"|label:"全选"
 {role:"delete"}|{label:"删除",role:"delete"}
 {role:"paste"}|{label:"粘贴",role:"paste"}
 {role:"copy"}|{label:"复制",role:"copy"}
@@ -813,10 +813,11 @@ children:["Join over "|children:["加入超过 "
 /\[([\w$]+)\("strong",{children:"Advanced settings:"}\)," Agent Forwarding, ",([\w$]+)\("br",{}\),"Jump Host, HTTP Proxy"\]/|[\g<1>("strong",{children:"高级设置: "}),"代理转发, ","跳板主机, HTTP代理"]
 "Invitation link copied!"|"邀请链接已复制!"
 
-[M(l)," without credentials"]|["不使用凭证",l==="move"?"移动":l==="copy"?"复制":l==="create"?"创建":l==="import"?"导入":M(l)]
-[M(l)," with credentials"]|["使用凭证",l==="move"?"移动":l==="copy"?"复制":l==="create"?"创建":l==="import"?"导入":M(l)]
-[M(l)," and use MultiKey"]|[l==="move"?"移动":l==="copy"?"复制":l==="create"?"创建":l==="import"?"导入":M(l),"并使用MultiKey"]
+/\[(?P<M>\w+?)\((?P<l>\w+?)\)," without credentials"\]/|["不使用凭证",\g<l>==="move"?"移动":\g<l>==="copy"?"复制":\g<l>==="create"?"创建":\g<l>==="import"?"导入":\g<M>(\g<l>)]
+/\[(?P<M>\w+?)\((?P<l>\w+?)\)," with credentials"\]/|["使用凭证",\g<l>==="move"?"移动":\g<l>==="copy"?"复制":\g<l>==="create"?"创建":\g<l>==="import"?"导入":\g<M>(\g<l>)]
+/\[(?P<M>\w+?)\((?P<l>\w+?)\)," and use MultiKey"\]/|[\g<l>==="move"?"移动":\g<l>==="copy"?"复制":\g<l>==="create"?"创建":\g<l>==="import"?"导入":\g<M>(\g<l>),"并使用MultiKey"]
 
+title:`Starting forwarding:|title:`开始转发:
 singular:"Port Forwarding Rule",plural:"Port Forwarding Rules"|singular:"端口转发规则",plural:"端口转发规则"
 "Unknown port forwarding type"|"未知的端口转发类型"
 "New Port Forwarding Rule"|"新建端口转发规则"
@@ -1101,7 +1102,9 @@ label:"Restore"|label:"恢复"
 "Now you can share groups with your team to make sure your team is up-to-date with the latest changes in the configuration."|"现在，你可以与你的团队共享组，以确保你的团队掌握最新的配置更改。"
 "Your team has been configured!"|"你的团队已配置!"
 
-children:"Personal"|children:"个人"
+children:"Waiting for data access"|children:"正在等待数据访问"
+"Meanwhile, you have access to the "|"与此同时, 你可以访问 "
+children:"personal vault."|children:"个人保管库"
 name:"Personal"|name:"个人"
 title:"Team"|title:"团队"
 
@@ -1307,3 +1310,60 @@ text:"Connection failed"|text:"连接失败"
 /`\${(?P<a>\w+?)} \${\w+?\("day",(?P=a)\)} left on your free Trial`/|`免费试用还剩 ${\g<a>} 天`
 "Review your options to keep your workflow uninterrupted."|"检查你的选项以保持你的工作流程不间断。"
 button_name:"Manage plans"|button_name:"管理计划"
+
+"Not all of your devices support biometrics"|"并非所有设备都支持生物识别技术"
+"Hardware: Touch/Face ID, FIDO2, etc..."|"硬件: 触控 ID/面容 ID、FIDO2 等..."
+/children:\["- ",(\w+?)\.opensshReleaseDate," release date"\]/|children:["- ",\g<1>.opensshReleaseDate," 发行日"]
+opensshVersion:"Legacy devices"|opensshVersion:"传统设备"
+"Make this passkey type the default"|"将此密钥类型设为默认值"
+children:"Software"|children:"软件"
+children:"Passkeys"|children:"通行密钥"
+children:"Passkeys for SSH"|children:"SSH 的通行密钥"
+"SSH.id is passkeys for SSH"|"SSH.id 是 SSH 的通行密钥"
+"Single place for public keys that act as a one distributed key."|"作为单一分布式密钥的公钥集中存储位置。"
+children:["Learn more "|children:["了解更多"
+children:"Device-bound"|children:"设备绑定"
+children:"No private keys sharing"|children:"不共享私人密钥"
+children:"Biometric-protected"|children:"生物特征保护"
+children:"Set up SSH.id"|children:"设置 SSH.id"
+children:"Finish SSH.id setup"|children:"完成 SSH.id 设置"
+"Open Termius on other devices or remove them to finish setup."|"在其他设备上打开 Termius 或移除设备以完成设置。"
+children:"Finish setup"|children:"完成设置"
+
+children:"Choose your SSH.id username"|children:"选择你的 SSH.id 用户名"
+/children:\["This username can be used as a default username",[\w$]+\("br",{}\),"for SSH authentication\."\]/|children:["此用户名可作为SSH认证的默认用户名使用"]
+placeholder:"username"|placeholder:"用户名"
+required:"Username is required"|required:"用户名是必填项"
+children:"Easy way to get your public keys from anywhere."|children:"轻松获取你在任何地方的公钥。"
+
+children:"Passkeys generation"|children:"生成密钥"
+children:"Open Termius on other devices or log out."|children:"请在其他设备上打开 Termius 或退出登录。"
+children:"Generating passkeys"|children:"正在生成密钥"
+children:"Couldn't generate"|children:"生成失败"
+children:"Open Termius to continue"|children:"请打开 Termius 继续操作"
+children:"Finish later"|children:"稍后完成"
+/children:\[(\w+?)\((\w+?),{size:"12px",thickness:4,color:"inherit"}\),"Waiting"\]/|children:[\g<1>(\g<2>,{size:"12px",thickness:4,color:"inherit"}),"等待"]
+/children:\[(\w+?)\((\w+?),{style:{transform:"rotate\(-100deg\) scaleY\(-1\)"}}\)," ","Try again"\]/|children:[\g<1>(\g<2>,{style:{transform:"rotate(-100deg) scaleY(-1)"}})," ","重试"]
+"It is recommended to use at least two devices"|"建议至少使用两台设备"
+"Log in on multiple devices to ensure access in case one is lost or stolen."|"在多台设备上登录，以确保在设备丢失或被盗时仍能访问。"
+
+children:"Use biometric by default?"|children:"默认使用生物识别功能?"
+/children:\["Requires ",(\w+?)\("strong",{children:"OpenSSH 8\.4\+"}\)," 和"," ",(\w+?)\("strong",{children:"ECDSA-SK"}\)," support\."\]/|children:["需要 ",\g<1>("strong",{children:"OpenSSH 8.4+"})," 及"," ",\g<1>("strong",{children:"ECDSA-SK"})," 支持."]
+children:"Don't use Biometrics confirmation"|children:"不使用生物特征验证"
+children:"Use Biometrics"|children:"使用生物识别技术"
+children:"Couldn't create SSH.id"|children:"无法创建 SSH.id"
+"Something went wrong. Please check your connection and try again, or complete it later."|"出现错误。请检查网络连接后重试，或稍后再完成操作。"
+children:"Try again"|children:"重试"
+"Creating SSH.id..."|"创建 SSH.id..."
+"Setting up your SSH.id. This may take a few moments."|"正在设置你的 SSH.id，这可能需要一些时间。"
+"This device has been added to your SSH.id"|"该设备已添加至你的 SSH.id 帐户。"
+"Your SSH.id is ready!"|"你的 SSH.id 已准备就绪！"
+"Go to your public profile to integrate SSH.id to your servers."|"前往你的公开个人资料页面，将 SSH.id 集成到你的服务器中。"
+/children:\["Go to sshid\.io\/",(\w+?)\]/|children:["前往 sshid.io/",\g<1>]
+
+"Keep biometric keys?"|"保留生物识别密钥?"
+/`You have \${(\w+?)\.length} key\${(\w+?)\.length===1\?"":"s"} stored on your computer`/|`你的计算机上存储了 ${\g<1>.length} 个密钥`
+"Delete biometric keys"|"删除生物识别密钥"
+"Delete your biometric keys irreversibly."|"永久删除你的生物识别密钥。"
+"Keep biometric keys"|"保留生物识别密钥"
+"Preserve your biometric keys on this device after logout."|"注销后在此设备上保留你的生物识别密钥。"
