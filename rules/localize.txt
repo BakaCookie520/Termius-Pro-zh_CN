@@ -1383,3 +1383,15 @@ children:"Try again"|children:"重试"
 
 "No destination"|"无目的地"
 /`\${\w+?\("this",(?P<e>\w+?)\)} \${\w+?\("folder",(?P=e)\)}`:`\${\w+?\("this",(?P<n>\w+?)\)} \${\w+?\("file",(?P=n)\)}`/|`${\g<e>>1?"这些":"这个"}目录`:`${\g<n>>1?"这些":"这个"}文件`
+
+"Keep your logs in sync across mobile and desktop with cloud vault."|"通过云保管库让你的日志在移动和桌面设备上保持同步。"
+"Troubleshoot faster with your teammates by accessing shared logs in Team vault."|"通过访问团队保管库中的共享日志，可以与成员更快地排除故障。"
+"Stay audit-ready with a custom log retention policy that fits your compliance requirements."|"通过适合你的合规性要求的自定义日志保留策略，做好审计准备。"
+/`You have \${(\w+?)}mb of logs stored locally\.`/|`你在本地存储了 ${\g<1>}mb 的日志。`
+"Back up your logs with cloud vault and access them on mobile and desktop."|"使用云保管库备份你的日志，并在移动和桌面设备上访问它们。"
+"Set up vault"|"设置保管库"
+"You already have an account"|"你已有账号"
+"Enter the encryption password for "|"输入下面电子邮件密码"
+"Enter encryption password"|"输入密码"
+"Sign up with a different email"|"使用不同的电子邮件注册"
+"Enter your encryption password"|"输入密码"
