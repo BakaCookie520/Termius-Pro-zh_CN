@@ -8,6 +8,10 @@
 "Reload Page"|"重新加载页面"
 "Restart Application"|"重启应用程序"
 "Toggle app theme"|"切换应用主题"
+
+# 屏蔽评分弹窗
+{bubbleCES:{zIndex:1201|{bubbleCES:{display:"none",zIndex:1201
+
 "Find a host or ssh user@hostname..."|"查找主机或 ssh user@hostname..."
 "Next"|"下一个"
 title:"Pro",pricePer|title:"专业版",pricePer
