@@ -122,6 +122,13 @@ rules/
    python apktools.py
    ```
 
+## 📖 常见问题
+
+1. ModuleNotFoundError: No module named 'tkinter'
+    - 缺少 tkinter 模块，请确保已安装 tkinter 模块。
+2. PermissionError: [Errno 13] Permission denied: '***/resources/app.asar.bak'
+    - 请检查权限，确保当前用户有`resources`目录写入权限。
+
 ## 🔔 注意事项
 
 - 该项目仅适用于本地学习和测试，不支持在线功能。
