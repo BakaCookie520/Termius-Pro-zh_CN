@@ -702,7 +702,6 @@ plural:"these hosts"|plural:"这些主机"
 "Require Pin Code"|"需要 PIN 码"
 "User ID"|"用户ID"
 certificate:"Certificate"|certificate:"证书"
-,"Certificate",|,"证书",
 label:"Certificate"|label:"证书"
 "Local Port Forwarding"|"本地端口转发"
 "Remote Port Forwarding"|"远程端口转发"
@@ -715,13 +714,6 @@ label:"Certificate"|label:"证书"
 endAdornment:"arrows"|endAdornment:"方向键"
 "Switch to specific Tab |"切换到指定的标签页
 "Termius for Teams"|"Termius 团队版"
-/children:\[([\w$]+)\("strong",{children:"Keeping the whole team up to date"}\)," with the latest changes to the infrastructure is easy with"," ",([\w$]+)\("strong",{children:"secure sharing"}\),"\."\]/|children:["通过",\g<1>("strong",{children:"安全共享"}),"可以轻松",\g<2>("strong",{children:"让整个团队及时了解"}),"基础设施的最新变化."]
-title:"Shared Snippets"|title:"分享片段"
-`Make your team as productive as you with a shared library of Snippets. Share your best ideas.|`通过共享的代码段库, 让你的团队和你一样高效。分享你的最佳想法。
-Gain faster response. Make fewer mistakes.`|获得更快的响应。减少错误。`
-title:"Shared Hosts",description:`No more IP addresses on Slack and Google Sheets.|title:"共享主机",description:`Slack 和 Google Sheets 上不再有IP地址。
-Enjoy simplified workflow and easy onboarding.`|享受简化的工作流程和轻松的入职体验。`
-"Invite people"|"开始邀请"
 
 "Key Export"|"密钥导出"
 "Key export"|"密钥导出"
@@ -870,7 +862,6 @@ singular:"Identity",plural:"Identities"|singular:"身份",plural:"身份"
 "Any host from this group will use this chain"|"该分组中的任何主机都将使用此链"
 children:"Clear"|children:"清除"
 "Environment Variables"|"环境变量"
-"Save Environment Variables to a Host and pass them through SSH automatically on every connection."|"将环境变量保存到主机并在每次连接时自动通过 SSH 传递它们。"
 "Use your Termius SSH keys remotely without leaving confidential data on the server."|"远程使用你的 Termius SSH 密钥，而不会在服务器上留下机密数据。"
 "Unlock Agent Forwarding"|"解锁代理转发"
 /"Set an environment variable for ",([\w$]+)\("strong",{children:([\w$]+)}\),"\."/|"为 ",\g<1>("strong",{children:\g<2>})," 设置环境变量."
@@ -1159,14 +1150,11 @@ shortTitle:"Serial Connections"|shortTitle:"串行连接"
 text:"Connect to routers, IoT and other hardware devices via Serial cable from desktop and mobile."|text:"通过桌面和移动设备的串行电缆连接到路由器、物联网和其他硬件设备。"
 title:"Unlock Tunneling"|title:"解锁隧道功能"
 text:"Access a remote host in a highly secured zone via a chain of jump hosts or a proxy server."|text:"通过跳板主机链或代理服务器访问高度安全区域中的远程主机。"
-title:"Unlock Certificates"|title:"解锁证书功能"
-shortTitle:"Certificates"|shortTitle:"证书"
-text:"Follow the industry best practices for SSH security. Connect using certificate-based authentication."|text:"遵循 SSH 安全性的行业最佳实践。使用基于证书的认证方式进行连接。"
 title:"Unlock Automation"|title:"解锁自动化功能"
 shortTitle:"Automation"|shortTitle:"自动化"
 text:"Launch snippets on multiple targets and run commands automatically on connection start."|text:"在多个目标上启动代码片段并在连接开始时自动运行命令。"
-title:"Unlock Env Variables"|title:"解锁环境变量功能"
 title:"Get a quote for Team"|title:"获取团队版报价"
+title:"Terms of Use"|title:"隐私政策"
 title:"New Encryption"|title:"全新加密功能"
 title:"Termius Support"|title:"Termius 技术支持"
 title:"Suggest Terminal Theme"|title:"推荐终端主题"
@@ -1180,7 +1168,7 @@ title:"Get Termius for Education!"|title:"获取 Termius 教育版！"
 "Purchase Termius Pro"|"购买 Termius 专业版"
 "Connect with one click from all your mobile and desktop devices."|"从你所有的移动和桌面设备上一键连接。"
 "Backup your connections, passwords, and keys in a cloud vault"|"在云保管库中备份你的连接、密码和密钥"
-"All Pro tools: SSH Certificates, Jump Hosts, Tunnels and more."|"所有专业版工具: SSH 证书、跳板主机、隧道等。"
+"All Pro tools: Jump Hosts, Tunnels and more."|"所有专业版工具: 跳板主机、隧道等。"
 "By signing up, you agree to the Termius"|"通过注册, 你同意 Termius"
 "Enable AI"|"启用 AI"
 "Feature List"|"功能列表"
@@ -1395,3 +1383,16 @@ children:"Try again"|children:"重试"
 "Enter encryption password"|"输入密码"
 "Sign up with a different email"|"使用不同的电子邮件注册"
 "Enter your encryption password"|"输入密码"
+["This ",ENCRYPTION_PASSWORD_DISPLAY," has previously appeared in a data breach and should never be used!"]|["此",ENCRYPTION_PASSWORD_DISPLAY,"之前曾出现在数据泄露中，切勿使用!"]
+"Password must be different from the current one."|"密码必须与当前密码不同。"
+"Password must be different from the email."|"密码必须与电子邮件不同。"
+["Reset ",ENCRYPTION_PASSWORD_DISPLAY]|["重置",ENCRYPTION_PASSWORD_DISPLAY]
+["The password reset will"," ",jsx$1(Typography,{variant:"body1",color:"error",display:"inline",children:"permanently delete"})," ","all your Vaults and associated information."]|["密码重置将"," ",jsx$1(Typography,{variant:"body1",color:"error",display:"inline",children:"永久删除"})," ","你的所有保管库和相关信息。"]
+/\["Always use ",(\w+?)\("strong",{children:(\w+?)}\)," to open"," ",(\w+?)\("strong",{children:\["\.",(\w+?)\.type\]}\)," files\?"\]/|["始终使用 ",\g<1>("strong",{children:\g<2>})," 打开"," ",\g<3>("strong",{children:[".",\g<4>.type]})," 文件?"]
+children:"File type associations"|children:"文件类型关联"
+children:"File Type"|children:"文件类型"
+children:"Open With"|children:"打开方式"
+"Yes":"No"|"是":"否"
+"yes":"no"|"是":"否"
+{YES:"Yes",NO:"No"}|{YES:"是",NO:"否"}
+["Yes","No"]|["是","否"]
