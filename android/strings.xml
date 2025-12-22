@@ -33,7 +33,7 @@
   <string name="access_all_features_trial">开始14天免费试用，在所有设备上使用专业版</string>
   <string name="access_all_productivity_tools">访问所有生产力工具</string>
   <string name="access_key_id_hint">访问密钥ID</string>
-  <string name="access_proxy_ssh_certificates_and_other_professional_tools">访问代理、SSH证书和其他专业工具</string>
+  <string name="access_proxy_ssh_certificates_and_other_professional_tools">访问代理和其他专业工具</string>
   <string name="access_token_hint">访问令牌</string>
   <string name="account">账户</string>
   <string name="account_2fa_enabled_state">已启用</string>
@@ -706,7 +706,6 @@
   <string name="empty_text_search">未找到任何内容</string>
   <string name="empty_text_shortcuts">无快捷方式</string>
   <string name="empty_title_command_history">无命令历史记录</string>
-  <string name="empty_widget_list">无活动连接和主机</string>
   <string name="enable">启用</string>
   <string name="enable_ai">启用 AI</string>
   <string name="enable_ai_in_termius">在 Termius 中启用 AI</string>
@@ -769,9 +768,6 @@
   <string name="enterprise_user_not_exist">你无法访问团队数据，请联系你的经理向你发送加入团队的邀请。</string>
   <string name="enterprise_user_not_migrated">你的账户不符合企业用户的最低安全要求，请联系我们支持团队 support@termius.com</string>
   <string name="env_variables">环境变量</string>
-  <string name="env_variables_premium">环境变量</string>
-  <string name="env_variables_premium_desc">将环境变量传递到 SSH 会话中</string>
-  <string name="env_variables_premium_desc_child">在 SSH 会话中使用环境变量。为主机设置环境变量以在连接时传递并影响会话。</string>
   <string name="env_variables_variable_name">变量</string>
   <string name="env_variables_variable_value">值</string>
   <string name="environment_variables">环境变量</string>
@@ -1181,7 +1177,6 @@ Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就
   <string name="introductory_offer_needed_tools_http_socks_proxy">HTTP/SOCKS 代理</string>
   <string name="introductory_offer_needed_tools_jump_hosts">跳板主机</string>
   <string name="introductory_offer_needed_tools_serial_cable">串口电缆</string>
-  <string name="introductory_offer_needed_tools_ssh_certificates">SSH 证书</string>
   <string name="introductory_offer_start_setup_description">Termius 将向你询问一些问题，以便根据你的需求定制应用体验。</string>
   <string name="invalid_params">输入的参数不正确。请填写正确的参数</string>
   <string name="invalid_uri_format">会话参数格式无效。
@@ -1253,6 +1248,18 @@ Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就
   <string name="leave_feedback">留下反馈</string>
   <string name="leave_feedback_here_hint">在这里留下你的反馈...</string>
   <string name="legacy_backspace">Ctrl+H</string>
+  <string name="legacy_private_storage_clear_confirm_button">清除数据</string>
+  <string name="legacy_private_storage_clear_confirm_message">这将永久删除你的旧 SFTP 文件。</string>
+  <string name="legacy_private_storage_clear_confirm_title">清除本地文件？</string>
+  <string name="legacy_private_storage_clear_failed">无法清除旧 SFTP 数据。</string>
+  <string name="legacy_private_storage_clear_success">旧 SFTP 数据已清除。</string>
+  <string name="legacy_private_storage_dialog_close">关闭</string>
+  <string name="legacy_private_storage_dialog_message">我们发现文件存储在以前的本地 SFTP 文件夹中。你可以将它们导出到外部存储。</string>
+  <string name="legacy_private_storage_dialog_title">检测到旧 SFTP 数据</string>
+  <string name="legacy_private_storage_dialog_total_size">总大小: %1$s</string>
+  <string name="legacy_private_storage_dialog_view_files">查看文件</string>
+  <string name="legacy_private_storage_prepare_failed">找不到文件管理器来查看旧版 SFTP。</string>
+  <string name="legacy_private_storage_summary_total_size">总计 %1$s</string>
   <string name="lets_get_you_going">让我们开始吧</string>
   <string name="lets_go">让我们开始吧</string>
   <string name="licenses_title">许可证</string>
@@ -1286,8 +1293,6 @@ Termius 不存储密码。如果你忘记了密码，你将丢失数据。这就
   <string name="lock_feature_desc_child">图案锁是旧式PIN授权方法的一种更安全的替代方案。</string>
   <string name="lock_pattern_error_toast">抱歉，你已尝试使用错误的图案解锁5次。
 请稍后再试。</string>
-  <string name="lock_widget_list_text">仅适用于专业版订阅者。
-请点击此区域了解更多…</string>
   <string name="log_in">登录</string>
   <string name="log_in_to_termius_to_unlock_your_encrypted_cloud_vault">登录到Termius以解锁你的加密云保管库</string>
   <string name="log_in_upper">登录</string>
@@ -1773,8 +1778,6 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="onboarding_dark_agent_forwarding_description">通过中间服务器建立连接，无需手动复制密钥或凭证</string>
   <string name="onboarding_dark_agent_forwarding_title">代理转发是专业版功能</string>
   <string name="onboarding_dark_all_feature_list_title">完整专业版功能列表</string>
-  <string name="onboarding_dark_environment_variables_description">将环境变量传递到 SSH 会话中</string>
-  <string name="onboarding_dark_environment_variables_title">环境变量是专业版功能</string>
   <string name="onboarding_dark_full_set_description">点击粘贴密码，通过自动补全获取命令建议</string>
   <string name="onboarding_dark_full_set_title">解锁完整终端工具集</string>
   <string name="onboarding_dark_host_chaining_description">创建多跳 SSH 隧道</string>
@@ -1927,6 +1930,8 @@ echo '$1' &gt;&gt; ~/.ssh/authorized_keys</string>
   <string name="private_storage_cannot_create_dir">无法创建目录</string>
   <string name="private_storage_cannot_rm_dir">无法移除目录</string>
   <string name="private_storage_cannot_rm_file">无法移除文件</string>
+  <string name="private_storage_provider_summary">旧版本地 SFTP 文件</string>
+  <string name="private_storage_provider_title">私有 SFTP 存储</string>
   <string name="private_storage_unable_rename">无法重命名 %s</string>
   <string name="pro_account_title">专业版</string>
   <string name="pro_paid_renewing_downgrade_button_label">确认，仅在一台设备使用 Termius</string>
@@ -2221,6 +2226,8 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_bell_vibration">震动</string>
   <string name="settings_bell_vibration_and_sound">震动和声音</string>
   <string name="settings_change_pin_code_title">更改 PIN</string>
+  <string name="settings_clear_private_sftp_data_summary">删除旧的本地 SFTP 文件</string>
+  <string name="settings_clear_private_sftp_data_title">清除私有数据</string>
   <string name="settings_color_sheme_title">字体与颜色</string>
   <string name="settings_compression_title">压缩级别</string>
   <string name="settings_connection_timeout_title">连接超时时间</string>
@@ -2229,6 +2236,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_detect_os_title">检测操作系统</string>
   <string name="settings_empty_field_validation">空字段</string>
   <string name="settings_emulation_type_title">终端类型</string>
+  <string name="settings_extract_private_sftp_data_title">查看私人数据</string>
   <string name="settings_fingerprint_service_description">用于控制终端的指纹手势</string>
   <string name="settings_font_category_title">字体</string>
   <string name="settings_get_more_info_title">关于 Termius 的更多信息</string>
@@ -2247,8 +2255,10 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_key_bell_settings">bell_settings</string>
   <string name="settings_key_category_account">account_settings</string>
   <string name="settings_key_category_session">session_settings</string>
+  <string name="settings_key_category_sftp">settings_key_category_sftp</string>
   <string name="settings_key_category_terminal">terminal_settings</string>
   <string name="settings_key_change_code">pin_code</string>
+  <string name="settings_key_clear_private_sftp_data">settings_key_clear_private_sftp_data</string>
   <string name="settings_key_create_account">login_settings_create_account</string>
   <string name="settings_key_cursor_speed">swipe_timer_serverauditor</string>
   <string name="settings_key_debug_panel">debug_panel_key</string>
@@ -2258,6 +2268,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_key_enable_ac_for_new_connection">enable_ac_for_new_connection</string>
   <string name="settings_key_enable_sending_ga">enable_sending_ga</string>
   <string name="settings_key_expanded_notification">expanded_notifications</string>
+  <string name="settings_key_extract_private_sftp_data">settings_key_extract_private_sftp_data</string>
   <string name="settings_key_font_settings">color_scheme_settings</string>
   <string name="settings_key_help_and_feedback">help_and_feedback_key</string>
   <string name="settings_key_hotkeys_settings">hotkeys_settings</string>
@@ -2325,6 +2336,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_rate_title">评价 Termius</string>
   <string name="settings_seconds">秒</string>
   <string name="settings_session_category_title">会话</string>
+  <string name="settings_sftp_category_title">SFTP</string>
   <string name="settings_shake_category_title">摇动</string>
   <string name="settings_shake_sens_title">摇动灵敏度</string>
   <string name="settings_shake_summary">摇动绑定功能</string>
@@ -2898,8 +2910,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="termius_premium_features_action_bar_title_expired">试用期结束</string>
   <string name="termius_premium_features_aws_import_subtitle">一键导入实例信息</string>
   <string name="termius_premium_features_aws_import_title">AWS 和 Digital Ocean 导入</string>
-  <string name="termius_premium_features_certificates_subtitle">升级至专业版使用证书认证连接！</string>
-  <string name="termius_premium_features_certificates_title">证书</string>
   <string name="termius_premium_features_cli_subtitle">导入导出配置数据</string>
   <string name="termius_premium_features_cli_title">CLI 工具同步 ~/.ssh/config</string>
   <string name="termius_premium_features_dns_discover_subtitle">轻松发掘网络全部潜力</string>
@@ -2920,10 +2930,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="termius_premium_features_startup_snippets_title">启动代码片段</string>
   <string name="termius_premium_features_sync_subtitle">零知识存储 (XSalsa20) 和双重认证</string>
   <string name="termius_premium_features_sync_title">安全跨设备同步</string>
-  <string name="termius_premium_features_variables_subtitle">向 SSH 会话传递环境变量</string>
-  <string name="termius_premium_features_variables_title">环境变量</string>
-  <string name="termius_premium_features_widget_subtitle">多连接管理的最快方式</string>
-  <string name="termius_premium_features_widget_title">主屏幕小组件</string>
   <string name="termius_try_now_title">免费试用，支持移动端与桌面端</string>
   <string name="termius_vault_encryption">Termius 保管库加密</string>
   <string name="termius_vault_encryption_description">Termius 采用企业级加密及最佳安全实践。仅你和团队可访问加密保管库数据。</string>
@@ -2997,7 +3003,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="two_auth_approve_button_title">已安装 Authy</string>
   <string name="two_auth_disabled">双重认证已禁用</string>
   <string name="two_auth_enabled">双重认证已启用</string>
-  <string name="two_auth_instructions_link">https://www.authy.com/learn-more/</string>
+  <string name="two_auth_instructions_link">https://www.authy.com/</string>
   <string name="two_auth_instructions_link_text">&lt;u&gt;点击查看说明&lt;/u&gt;</string>
   <string name="two_auth_note">请确保已安装激活 Authy 应用。使用手机号登录 Authy 获取授权码</string>
   <string name="two_factor_auth_disable_description">输入双重认证应用验证码以完成禁用</string>
@@ -3196,11 +3202,6 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="where_data_stored_title">我的数据存储在哪里？</string>
   <string name="where_private_key_stored_description">私钥在客户端使用密码加密后存储于 Termius 同步服务器。即使 Termius 员工也无法在不知道密码的情况下访问私钥</string>
   <string name="where_private_key_stored_title">私钥存储在哪里？</string>
-  <string name="widget_feature">主屏幕小组件</string>
-  <string name="widget_feature_desc">多连接管理的最快方式</string>
-  <string name="widget_feature_desc_child">直接从主屏幕快速管理多个连接</string>
-  <string name="widget_name">Termius 小组件</string>
-  <string name="widget_text">小组件文本</string>
   <string name="write_permission">写入权限</string>
   <string name="yes">是</string>
   <string name="you_already_have_an_account">你已有账户</string>
