@@ -436,7 +436,7 @@ no_credentials_sharing:"No credentials",credentials_sharing:"Credentials"|no_cre
 "New Port Forwarding"|"新建端口转发"
 "Discard changes"|"放弃更改"
 "Do you want to discard changes?"|"你想放弃更改吗?"
-"Not all required fields are filled. Do you want to finish editing and discard all changes?"|"并非所有必填字段都已填写。你想完成编辑并放弃所有更改吗?"
+"Not all required fields are filled. Do you want to finish editing and discard all changes?"|"并非所有必填字段都已填写，你想完成编辑并放弃所有更改吗?"
 "Bind address"|"绑定地址"
 "Editing in progress"|"编辑进行中"
 
@@ -512,6 +512,7 @@ placeholder:"Tags"|placeholder:"标记"
 "Light"|"明亮"
 "Dark"|"暗黑"
 "Keychain"|"密钥链"
+"Certificate"|"证书"
 "Share"|"分享"
 "Service"|"服务"
 "Backspace"|"回退"
@@ -701,8 +702,6 @@ plural:"these hosts"|plural:"这些主机"
 "Require User Presence"|"需要用户在场确认"
 "Require Pin Code"|"需要 PIN 码"
 "User ID"|"用户ID"
-certificate:"Certificate"|certificate:"证书"
-label:"Certificate"|label:"证书"
 "Local Port Forwarding"|"本地端口转发"
 "Remote Port Forwarding"|"远程端口转发"
 "Dynamic Port Forwarding"|"动态端口转发"
@@ -762,8 +761,6 @@ title:`Change ${|title:`修改${
 label:`Old ${|label:`旧${
 label:`New ${|label:`新${
 "Username*"|"用户名*"
-placeholder:"Certificate"|placeholder:"证书"
-case"certificate":return"Certificate"|case"certificate":return"证书"
 case"charset":return"Encoding"|case"charset":return"编码"
 case"fido":return"FIDO2 Key"|case"fido":return"FIDO2 密钥"
 "Create snippet"|"创建代码片段"
@@ -898,7 +895,7 @@ singular:"identity",plural:"identities"|singular:"身份",plural:"身份"
 "activate autocomplete for this session"|"激活此会话的自动补全功能"
 "Add password for sudo"|"为 sudo 添加密码"
 "Add and store your identities securely in Termius and use them for faster connections."|"在 Termius 中安全地添加和存储你的身份，并使用它们实现更快的连接。"
-"Store your credentials to quick and securely access your servers."|"存储你的凭证，以快速，安全地访问服务器。"
+"Store your credentials to quick and securely access your servers."|"存储你的凭证，以快速、安全地访问服务器。"
 "Convert text to command with AI"|"使用 AI 将文本转换为命令"
 "Ask AI to convert your prompt to a shell command"|"让 AI 将你的提示符转换为 shell 命令"
 "Something went wrong. Try again"|"出现问题。请重试"
@@ -1044,7 +1041,7 @@ children:"Security"|children:"安全"
 "Create a new window"|"创建一个新窗口"
 
 "Upgrade now to keep your work uninterrupted"|"立即升级以确保你的工作不被中断"
-"Upgrade to get more from Termius"|"升级以从Termius中获得更多功能"
+"Upgrade to get more from Termius"|"升级以从 Termius 中获得更多功能"
 /i\("span",{(.*?),children:\[([^,]+)," "\]}\),"of your full Termius experience"/|"你完整体验 Termius ",i("span",{\g<1>,children:[\g<2>]})
 /`\${([^}]+)} days left`:"Last day"/|`还剩${\g<1>}天`:"的最后一天"
 children:"Recommended"|children:"推荐"
@@ -1263,7 +1260,7 @@ title:"Logs"|title:"日志"
 "Need more time to evaluate the Team plan?"|"需要更多时间来评估团队计划?"
 "Termius helps avoid common team problems:"|"Termius 有助于避免常见的团队问题:"
 "No, I don't need a team"|"不，我不需要一个团队"
-/`You have switched to \${(\w+?)} plan successfully`/|`你已成功切换到${\g<1>}计划`
+/`You have switched to \${(\w+?)} plan successfully`/|`你已成功切换到 ${\g<1>} 计划`
 "Save a working day for each member on searching for connections monthly."|"每月为每位成员在寻找连接上节省一个工作日。"
 "Keep your connection information up-to-date in a single place."|"将你的连接信息保持在一个地方。"
 "Securely grant access to passwords and keys via shared encrypted vault."|"通过共享加密保管库安全地授予对密码和密钥的访问权限。"
@@ -1396,3 +1393,7 @@ children:"Open With"|children:"打开方式"
 "yes":"no"|"是":"否"
 {YES:"Yes",NO:"No"}|{YES:"是",NO:"否"}
 ["Yes","No"]|["是","否"]
+
+"Invite your team"|"邀请你的团队"
+`Manage infrastructure together in shared team vaults.|`在共享团队保管库中共同管理基础架构。
+Keep your teammates on the same page and boost their productivity.`|让你的成员保持同步并提高他们的工作效率。`
