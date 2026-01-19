@@ -68,9 +68,9 @@ class TermiusModifier:
                 sys.exit(1)
 
     def decompress_asar(self):
-        """解压 app.asar 文件"""
-        cmd = f'asar extract {self._original_path} {self._app_dir}'
-        run_command(cmd, shell=True)
+        """解压 app.asar 文件（使用 list 调用，避免 shell/空格问题）"""
+        cmd = [get_asar_cmd(), "extract", self._original_path, self._app_dir]
+        run_command(cmd)
 
     def copy_unpacked_files(self):
         """将解包文件复制到脚本目录下的指定文件夹"""
@@ -155,9 +155,17 @@ class TermiusModifier:
             logging.error(f"字符串提取失败|Failed to extract strings: {e}")
 
     def pack_to_asar(self):
-        """打包 app.asar 文件"""
-        cmd = f'asar pack {self._app_dir} {self._original_path} --unpack-dir "{{node_modules/@termius,out}}"'
-        run_command(cmd, shell=True)
+        """打包 app.asar 文件（使用 list 调用，避免 shell/空格问题）"""
+        # 注意：将 --unpack-dir 作为单独的 arg 传入
+        cmd = [
+            get_asar_cmd(),
+            "pack",
+            self._app_dir,
+            self._original_path,
+            "--unpack-dir",
+            "{node_modules/@termius,out}"
+        ]
+        run_command(cmd)
 
     def restore_backup(self):
         """完整还原操作"""
@@ -286,17 +294,17 @@ class TermiusModifier:
     def find_in_content(self):
         """文件内容搜索功能"""
         find_terms = self.args.find
-        
+
         # 如果参数是 "extract"，则执行解包和提取字符串功能
         if find_terms and len(find_terms) == 1 and find_terms[0].lower() == "extract":
             self.extract_and_unpack()
             return
-        
+
         # 原有的搜索功能
         code_files = self.collect_code_files()
         if not os.path.exists(self._app_dir):
             self.decompress_asar()
-        
+
         found_files = []
         for file_path in code_files:
             file_content = read_file(file_path, strip_empty=False)
@@ -329,24 +337,30 @@ class TermiusModifier:
             logging.warning(f"{terms_list}")
             logging.warning(f"没有在解包文件中搜索到目标|No files contain all the above terms.")
             logging.warning(f"{separator}")
-    
+
     def extract_and_unpack(self):
         """执行解包和提取字符串功能"""
         logging.info("开始执行解包和字符串提取...|Starting unpack and string extraction...")
         start_time = time.monotonic()
-        
+
         # 创建备份
         self.create_backup()
-        
+
         # 解包 asar 文件
         self.decompress_asar()
-        
+
         # 复制解包文件并提取字符串
         self.copy_unpacked_files()
-        
+
         elapsed = time.monotonic() - start_time
         logging.info(f"解包和字符串提取在 {elapsed:.2f} 秒内完成|Unpack and string extraction done in {elapsed:.2f} seconds.")
 
+def get_asar_cmd():
+    """
+    Windows 下使用 asar.cmd
+    macOS / Linux 使用 asar
+    """
+    return "asar.cmd" if is_windows() else "asar"
 
 def run_command(cmd, shell=False):
     """执行系统命令"""
@@ -420,7 +434,8 @@ def check_asar_existence(path):
 
 def check_asar_installed():
     """检查是否安装了 asar 命令"""
-    run_command("asar --version", shell=True)
+    # 改为 list 调用，避免依赖 shell
+    run_command([get_asar_cmd(), "--version"])
 
 
 def select_directory(title):
@@ -439,13 +454,16 @@ def select_directory(title):
 def is_macos():
     return platform.system() == 'Darwin'
 
+def is_windows():
+    return platform.system() == 'Windows'
 
 def apply_macos_fix():
     if is_macos():
         logging.info("Applying macOS fix...")
         script_path = "./macos/osxfix.sh"
         run_command(["chmod", "+x", script_path])
-        run_command(script_path)
+        # 以 list 形式执行脚本（脚本已赋可执行权限）
+        run_command([script_path])
         logging.info("MacOS fix applied.")
 
 
