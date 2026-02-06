@@ -66,6 +66,9 @@ def is_windows():
     """Check if it's a Windows system"""
     return platform.system() == 'Windows'
 
+def get_apksigner_shell():
+    """Get apksigner shell command"""
+    return "apksigner.bat" if is_windows() else "apksigner"
 
 def split_filename(abs_path):
     """Extract filename from absolute path and separate basename and extension"""
@@ -495,7 +498,7 @@ class TermiusAPKModifier:
         if os.path.exists(built_apk_aligned_file):
             os.remove(built_apk_aligned_file)
 
-        run_command(['zipalign', '-p', '-f', '4', built_apk_file, built_apk_aligned_file], shell=True)
+        run_command(['zipalign', '-p', '-f', '4', built_apk_file, built_apk_aligned_file])
         os.remove(built_apk_file)
         shutil.move(str(built_apk_aligned_file), str(built_apk_file))
         logger.info('Zipalign operation completed')
@@ -513,7 +516,7 @@ class TermiusAPKModifier:
             '-storepass', sign_config["sign.keystore.password"],
             '-keypass', sign_config["sign.key.password"],
             '-dname', f"CN={sign_config['sign.key.dname.cn']},C={sign_config['sign.key.dname.c']}"
-        ], shell=True, log=False)
+        ], log=False)
         logger.info('Keystore generation completed')
 
     def _sign_apk(self, apk_filename):
@@ -528,20 +531,20 @@ class TermiusAPKModifier:
             os.remove(build_apk_signed_file)
 
         run_command([
-            'apksigner', 'sign',
+            get_apksigner_shell(), 'sign',
             '--ks', os.path.join(self.keystore_dir, self.sign_properties["sign.keystore"]),
             '--ks-pass', f"pass:{self.sign_properties['sign.keystore.password']}",
             '--ks-key-alias', self.sign_properties["sign.key.alias"],
             '--key-pass', f"pass:{self.sign_properties['sign.key.password']}",
             '--out', build_apk_signed_file,
             build_apk_file
-        ], shell=True, log=False)
+        ], log=False)
 
         os.remove(build_apk_file)
         shutil.move(str(build_apk_signed_file), str(build_apk_file))
         logger.info('APK signing completed')
         logger.info('Verifying APK signature')
-        run_command(['apksigner', 'verify', '--verbose', build_apk_file], shell=True)
+        run_command([get_apksigner_shell(), 'verify', '--verbose', build_apk_file])
         logger.info('APK signature verification completed')
 
     def _apkm_to_apk(self, apkm_file, apk_file):
@@ -551,7 +554,7 @@ class TermiusAPKModifier:
             raise Exception(f"{apk_editor_jar} not found.")
         if os.path.exists(apk_file):
             os.remove(apk_file)
-        run_command(['java', '-jar', apk_editor_jar, 'm', '-i', apkm_file, '-o', apk_file], shell=True)
+        run_command(['java', '-jar', apk_editor_jar, 'm', '-i', apkm_file, '-o', apk_file])
 
     def _decode_apk(self, apk_file, out_dir):
         """Decompile APK file"""
@@ -560,7 +563,7 @@ class TermiusAPKModifier:
             raise Exception(f"{apk_editor_jar} not found.")
         if os.path.exists(out_dir):
             safe_rmtree(out_dir)
-        run_command(['java', '-jar', apk_editor_jar, 'd', '-i', apk_file, '-o', out_dir], shell=True)
+        run_command(['java', '-jar', apk_editor_jar, 'd', '-i', apk_file, '-o', out_dir])
 
     def _replace_language_xml(self, target_dir):
         """Replace language resource file"""
@@ -581,7 +584,7 @@ class TermiusAPKModifier:
         apk_file = os.path.join(self.tmp_dir, apk_filename + EXT_APK)
         if os.path.exists(apk_file):
             os.remove(apk_file)
-        run_command(['java', '-jar', apk_editor_jar, 'b', '-i', out_dir, '-o', apk_file], shell=True)
+        run_command(['java', '-jar', apk_editor_jar, 'b', '-i', out_dir, '-o', apk_file])
 
     def _export_apk(self, apk_filename, export_filename):
         """Export final APK file"""
