@@ -1448,3 +1448,4 @@ description:"Share data across teammates, collaborate in terminal sessions"|desc
 description:`Connect to your servers in one click, use AI-powered autocomplete,|description:`一键连接到你的服务器，使用 AI 驱动的自动补全，
 sync your data across mobile and desktop`|跨移动设备和桌面同步你的数据`
 "Enable Advanced Settings"|"启用高级设置"
+children:"Interactive"|children:"交互式"
