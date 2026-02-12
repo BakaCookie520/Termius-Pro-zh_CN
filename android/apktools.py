@@ -1,3 +1,4 @@
+import argparse
 import cloudscraper
 import logging
 import os
@@ -66,9 +67,11 @@ def is_windows():
     """Check if it's a Windows system"""
     return platform.system() == 'Windows'
 
+
 def get_apksigner_shell():
     """Get apksigner shell command"""
     return "apksigner.bat" if is_windows() else "apksigner"
+
 
 def split_filename(abs_path):
     """Extract filename from absolute path and separate basename and extension"""
@@ -166,10 +169,7 @@ class CloudScraperWrapper:
         self.scraper = self._create_scraper()
 
     def _create_scraper(self):
-        scraper = cloudscraper.create_scraper(
-            browser=self.browser,
-            delay=self.delay
-        )
+        scraper = cloudscraper.create_scraper(browser=self.browser, delay=self.delay)
 
         if self.user_agent:
             scraper.headers.update({'User-Agent': self.user_agent})
@@ -177,8 +177,13 @@ class CloudScraperWrapper:
         return scraper
 
     def _log(self, message, level="INFO"):
+        level = level.lower().strip()
+        valid_levels = ['debug', 'info', 'warning', 'error', 'critical']
+        if level not in valid_levels:
+            raise ValueError(f"无效等级: {level}. 有效值: {valid_levels}")
+        log = getattr(logger, level)
         if self.debug:
-            print(f"[{level}] {time.strftime('%Y-%m-%d %H:%M:%S')} - {message}")
+            log(message)
 
     def _handle_exception(self, e: Exception, attempt: int) -> bool:
         if isinstance(e, CloudflareCaptchaError):
@@ -203,7 +208,7 @@ class CloudScraperWrapper:
 
         elif isinstance(e, HTTPError):
             status = e.response.status_code
-            if status in (429, 500, 502, 503, 504):  # 可重试的状态码
+            if status in (429, 500, 502, 503, 504):  # Retryable status codes
                 self._log(f"HTTP error {status} (Attempt {attempt + 1}/{self.max_retries}): {str(e)}", "WARNING")
                 return attempt < self.max_retries - 1
             else:
@@ -325,9 +330,14 @@ class TermiusAPKModifier:
         create_or_recreate_dir(tmp_dir)
         return tmp_dir
 
-    def _extract_version(self, soup):
+    def extract_version(self):
+        main_page_soup = self._fetch_page(BASE_APK_URL, GLOBAL_HEADERS)
+
+        if not main_page_soup:
+            raise Exception("Failed to access main page, terminating program.")
+
         title_selector = '#primary > div.listWidget.p-relative .appRow h5.appRowTitle'
-        title_element = soup.select_one(title_selector)
+        title_element = main_page_soup.select_one(title_selector)
 
         if not title_element:
             logger.error("Application title element not found, please check selector compatibility")
@@ -340,7 +350,13 @@ class TermiusAPKModifier:
             logger.error(f"No valid version found in title: {full_title}")
             return None
 
-        return version_match.group(1)
+        latest_version = version_match.group(1)
+
+        if not latest_version:
+            raise Exception("Failed to extract version number, terminating program.")
+
+        logger.info(f"Detected latest version: {latest_version}")
+        return latest_version
 
     def _fetch_page(self, url, headers=None):
         headers = headers or GLOBAL_HEADERS
@@ -424,16 +440,11 @@ class TermiusAPKModifier:
         try:
             logger.info(f"{filename} does not exist, starting download...")
             logger.info(f"Fetching version number for {filename}...")
-            main_page_soup = self._fetch_page(BASE_APK_URL, GLOBAL_HEADERS)
 
-            if not main_page_soup:
-                raise Exception("Failed to access main page, terminating program.")
-
-            latest_version = self._extract_version(main_page_soup)
+            latest_version = self.extract_version()
             if not latest_version:
                 raise Exception("Failed to extract version number, terminating program.")
 
-            logger.info(f"Detected latest version: {latest_version}")
             version_replace = latest_version.replace('.', '-')
             version_slug = f"termius-modern-ssh-client-{version_replace}"
 
@@ -664,8 +675,46 @@ class TermiusAPKModifier:
 def main():
     """Main function"""
     logger.info("Process initialization started")
+    parser = argparse.ArgumentParser(
+        description="🔧 Termius APK Localization Modification Tool",
+        epilog="📝 Usage examples:\n  python apktools.py -l  # Execute localization modification\n  python apktools.py -v  # Display version information",
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument(
+        "-l", "--localize",
+        action="store_true",
+        help="🌍 Enable localization patch (Chinese translation)"
+    )
+
+    parser.add_argument(
+        "-v", "--version",
+        action="store_true",
+        help="📌 Display program version information"
+    )
+
+    args = parser.parse_args()
+
     modifier = TermiusAPKModifier()
-    modifier.modify_apk()
+    if args.version:
+        try:
+            version = modifier.extract_version()
+            if version:
+                print(version)
+            else:
+                print("0.0.0")
+                sys.exit(1)
+        except Exception as e:
+            print(f"Error: {e}")
+            sys.exit(1)
+
+    if not args.localize and not args.version:
+        logger.info("No parameters specified, will execute default localization operation")
+        args.localize = True
+
+    if args.localize:
+        modifier.modify_apk()
+
     logger.info("Process completed")
 
 
