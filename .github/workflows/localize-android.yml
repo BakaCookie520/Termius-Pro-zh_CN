@@ -29,6 +29,7 @@ jobs:
       - name: Get Version
         id: version
         run: |
+          cd android
           version=$(python apktools.py --version)
           if [ -z "$version" ]; then
             version="0.0.0"
