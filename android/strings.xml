@@ -2111,6 +2111,8 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="sftp_error_end_of_file">文件结尾</string>
   <string name="sftp_error_failure">操作失败</string>
   <string name="sftp_error_file_already_exist">文件已存在</string>
+  <string name="sftp_error_file_name">意外的文件名错误</string>
+  <string name="sftp_error_file_read_error">无法读取文件</string>
   <string name="sftp_error_invalid_filename">文件名无效</string>
   <string name="sftp_error_invalid_handle">句柄无效</string>
   <string name="sftp_error_link_loop">链接循环</string>
@@ -2131,7 +2133,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="sftp_error_permission_denied">权限被拒绝</string>
   <string name="sftp_error_prepare_remote_items">无法准备远程项目</string>
   <string name="sftp_error_quota_exceeded">超出配额</string>
-  <string name="sftp_error_session_not_connected_or_file_name">会话未连接或文件名错误</string>
+  <string name="sftp_error_session_not_connected">会话未连接</string>
   <string name="sftp_error_session_not_connected_or_folder_read">会话未连接或文件夹读取错误</string>
   <string name="sftp_error_source_session_not_connected">源会话未连接</string>
   <string name="sftp_error_transfer_canceled">取消传输</string>
