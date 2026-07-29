@@ -240,8 +240,7 @@ description:"Choose SSH ID security passkey"|description:"选择 SSH ID 安全�
 "Account with specified email is not registered"|"指定电子邮件的账号未注册"
 "Hide Hidden Files":"Show Hidden Files"|"隐藏隐藏文件":"显示隐藏文件"
 "Connection failed with connection log:"|"连接失败, 并显示连接日志:"
-"The update will be downloaded automatically."|"将会自动下载更新。"
-/`Version \${([\w$]+?)\.app\.getVersion\(\)} is the latest version\.`/|`版本 ${\g<1>.app.getVersion()} 是最新版本。`
+
 "Data has not been synchronized yet"|"数据未同步"
 "Re-sync your data"|"重新同步你的数据"
 "Delete local data and start over"|"删除本地数据并重新开始"
@@ -258,13 +257,12 @@ description:"Choose SSH ID security passkey"|description:"选择 SSH ID 安全�
 "Phone number"|"手机号码"
 "Password reset failed"|"密码重置失败"
 "Verified":"Not verified"|"已验证":"未验证"
-"New Update Available"|"新版本可用"
+
 "No Update Available"|"无可用更新"
 "Local Terminal Path"|"本地终端路径"
 "Keepalive Interval"|"保持连接间隔"
 "Import from CSV"|"从 CSV 导入"
 "Remove known host"|"删除已知主机"
-"New Update available."|"新版本可用。"
 "No update available."|"无可用更新。"
 "Experiment Toggles"|"实验性开关"
 "How do we know?"|"我们如何知道?"
@@ -1393,8 +1391,7 @@ children:"Take back remote control"|children:"收回远程控制权限"
 children:"Manage plans"|children:"管理套餐"
 button_name:"Manage plans"|button_name:"管理套餐"
 children:"Confirm access"|children:"确认访问"
-"New Termius version is available"|"新的 Termius 版本已推出"
-"Version {version} is ready to install."|"版本 {version} 已准备好安装。"
+
 "Processing your request..."|"正在处理你的请求..."
 text:"Connecting"|text:"正在连接"
 text:"Reconnect"|text:"重新连接"
@@ -1413,6 +1410,11 @@ opensshVersion:"Legacy devices"|opensshVersion:"传统设备"
 children:"Software"|children:"软件"
 children:"Passkeys"|children:"通行密钥"
 children:"Passkeys for SSH"|children:"SSH 的通行密钥"
+children:"Copy passkeys"|children:"复制通行密钥"
+children:"Copy SSH IDs"|children:"复制 SSH ID"
+"No SSH ID"|"无 SSH ID"
+"・You"|"・个人"
+"・Owner"|"・所有者"
 "SSH ID is passkeys for SSH"|"SSH ID 是 SSH 的通行密钥"
 "Single place for public keys that act as a one distributed key."|"作为单一分布式密钥的公钥集中存储位置。"
 children:["Learn more "|children:["了解更多"
@@ -1430,7 +1432,7 @@ children:"Add FIDO2 Key"|children:"添加 FIDO2 密钥"
 children:"Finish setup"|children:"完成设置"
 
 children:"Choose your SSH ID username"|children:"选择你的 SSH ID 用户名"
-/children:\["This username can be used as a default username",[\w$]+\("br",{}\),"for SSH authentication\."\]/|children:["此用户名可作为SSH认证的默认用户名使用"]
+/children:\["This username can be used as a default username",[\w$]+\("br",{}\),"for SSH authentication\."\]/|children:["此用户名可作为 SSH 认证的默认用户名使用"]
 placeholder:"username"|placeholder:"用户名"
 required:"Username is required"|required:"用户名是必填项"
 children:"Easy way to get your public keys from anywhere."|children:"轻松获取你在任何地方的公钥。"
@@ -1442,7 +1444,7 @@ children:"Couldn't generate"|children:"生成失败"
 children:"Open Termius to continue"|children:"请打开 Termius 继续操作"
 children:"Finish later"|children:"稍后完成"
 /children:\[(\w+?)\((\w+?),{size:"12px",thickness:4,color:"inherit"}\),"Waiting"\]/|children:[\g<1>(\g<2>,{size:"12px",thickness:4,color:"inherit"}),"等待"]
-/children:\[(\w+?)\((\w+?),{style:{transform:"rotate\(-100deg\) scaleY\(-1\)"}}\)," ","Try again"\]/|children:[\g<1>(\g<2>,{style:{transform:"rotate(-100deg) scaleY(-1)"}})," ","重试"]
+
 "It is recommended to use at least two devices"|"建议至少使用两台设备"
 "Log in on multiple devices to ensure access in case one is lost or stolen."|"在多台设备上登录，以确保在设备丢失或被盗时仍能访问。"
 
@@ -1550,17 +1552,23 @@ text:"Set PIN code on your FIDO2 device to show here."|text:"在 FIDO2 设备上
 /children:\[" ","for the ",([\w$]+?)\(Typography,{bold:!0,children:([\w$]+?)}\)," connection"\]/|children:[" ","用于 ",\g<1>(Typography,{bold:!0,children:\g<2>})," 连接"]
 children:"Live"|children:"实时"
 /`\${(\w+?)} \${[\w$]+?\("participant",\w+?\)}`/|`${\g<1>} 位参与者`
-message:"Latest update is already downloaded."|message:"已下载最新更新。"
-title:"Update Ready"|title:"更新准备就绪"
-detail:"The update will be applied after restart."|detail:"更新将在重启后应用。"
+"New update is available"|"发现可用更新"
+"Downloading the latest update"|"正在下载更新"
+/`Version \${(\w+?)} is downloading. You can update once it's ready.`/|`正在下载 ${\g<1>} 版本，下载完成后即可更新。`
+"Restart to update"|"重启更新"
+"Read changelog"|"查看更新日志"
+"Update available"|"有可用更新"
+/`Version \${(\w+?)} is ready to be installed.`/|`${\g<1>} 版本已准备就绪，可安装。`
+/`You are already using the latest version \${([\w$]+?)\.app\.getVersion\(\)}.`/|`当前已是最新版本 ${\g<1>.app.getVersion()}。`
+"Update is downloading"|"正在下载更新"
+"You can update from the tab bar once the download is complete."|"下载完成后，可从标签页进行更新。"
+
 message:"There was an error checking for updates."|message:"检查更新时出错。"
 title:"Update Error"|title:"更新错误"
 message:"Not enough disk space to download the update."|message:"没有足够的磁盘空间来下载更新。"
 title:"Insufficient Disk Space"|title:"磁盘空间不足"
 detail:"Please free up some disk space and try again"|detail:"请释放一些磁盘空间然后再试一次"
-message:"Update is already downloading."|message:"更新已在下载中。"
-title:"Update In Progress"|title:"更新进行中"
-detail:"Notification will be sent when ready."|detail:"准备就绪后将发送通知。"
+
 message:"Unable to check for updates."|message:"无法检查更新。"
 title:"Configuration Error"|title:"配置错误"
 detail:"There was a problem configuring the update service."|detail:"配置更新服务时出现问题。"
